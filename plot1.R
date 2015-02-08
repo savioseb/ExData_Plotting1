@@ -9,10 +9,6 @@ dataFull$Date <- as.Date(dataFull$Date, format="%d/%m/%Y")
 dataReal <- subset(dataFull, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
 rm(dataFull)
 
-## Converting dates
-datetime <- paste(as.Date(dataReal$Date), dataReal$Time)
-dataReal$Datetime <- as.POSIXct(datetime)
-
 ## Plot 1 - creating
 hist(dataReal$Global_active_power, main="Global Active Power", 
      xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
